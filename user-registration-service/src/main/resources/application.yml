@@ -10,10 +10,10 @@ spring:
     show-sql: true
     hibernate:
       ddl-auto: update
-email:
-  key:
-    api-key:48257sfhtthwauh
-    clientSecret=secret
+#email:
+#  key:
+#    api-key:48257sfhtthwauh
+#    clientSecret=secret
 
 server:
   port: 9091

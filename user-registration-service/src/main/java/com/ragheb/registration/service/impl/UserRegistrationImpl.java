@@ -19,7 +19,16 @@ public class UserRegistrationImpl implements UserRegistrationService {
                 .email(userDTO.getEmail())
                 .mobile(userDTO.getMobile())
                 .dateOfBirth(userDTO.getDateOfBirth())
+                .city(userDTO.getCity())
                 .build();
-        userRepository.save(user);
+                this.userRepository.save(user);
+
+//        User savedUser =
+//        return userDTO.builder()
+//                .email(savedUser.getEmail())
+//                .mobile(savedUser.getMobile())
+//                .dateOfBirth(savedUser.getDateOfBirth())
+//                .city(savedUser.getCity())
+//                .build();
     }
 }

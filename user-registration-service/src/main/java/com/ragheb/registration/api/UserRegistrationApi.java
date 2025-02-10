@@ -1,14 +1,15 @@
 package com.ragheb.registration.api;
 
-import com.ragheb.registration.dto.EmailKeyDTO;
 import com.ragheb.registration.dto.UserDTO;
 import com.ragheb.registration.service.DemoServiceBroker;
 import com.ragheb.registration.service.UserRegistrationService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("users")
+@RequestMapping("/users")
 @RequiredArgsConstructor
 public class UserRegistrationApi {
 
@@ -17,8 +18,9 @@ public class UserRegistrationApi {
     private final DemoServiceBroker broker;
 
     @PostMapping
-    public void register(@RequestBody UserDTO userDTO){
+    public ResponseEntity<String> register(@RequestBody UserDTO userDTO){
         this.service.register(userDTO);
+        return new ResponseEntity<>("User has been registered", HttpStatus.CREATED);
     }
 
 //    @GetMapping("/email")

@@ -13,4 +13,5 @@ public class UserDTO {
     private String email;
     private LocalDate dateOfBirth;
     private String mobile;
+    private String city;
 }
