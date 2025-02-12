@@ -6,6 +6,11 @@
       <list>
         <option value="$PROJECT_DIR$/user-registration-service/pom.xml" />
         <option value="$PROJECT_DIR$/demo/pom.xml" />
+        <option value="$PROJECT_DIR$/movie-ticket-booking-system/pom.xml" />
+        <option value="$PROJECT_DIR$/com-services-registry/pom.xml" />
+        <option value="$PROJECT_DIR$/movie-ticket-booking-system/api-gateway/pom.xml" />
+        <option value="$PROJECT_DIR$/movie-ticket-booking-system/com-services-registry/pom.xml" />
+        <option value="$PROJECT_DIR$/movie-ticket-booking-system/notification-service/pom.xml" />
       </list>
     </option>
   </component>

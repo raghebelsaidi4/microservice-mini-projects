@@ -13,5 +13,6 @@ public class UserRegistrationServiceHandler {
     @ExceptionHandler(SQLIntegrityConstraintViolationException.class)
     public ResponseEntity<String> sQLIntegrityConstraintViolationException(SQLIntegrityConstraintViolationException sqlException) {
         return new ResponseEntity<>(sqlException.getMessage(), HttpStatus.BAD_REQUEST);
+
     }
 }

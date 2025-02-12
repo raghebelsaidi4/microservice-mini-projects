@@ -1,0 +1,26 @@
+server:
+  port: 9090
+spring:
+  application:
+    name: payment-service
+  datasource:
+    url: jdbc:mysql://${MYSQL_HOST:localhost}/payments?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
+    username: root
+    password: ragheb01276323608
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    database-platform: org.hibernate.dialect.MySQL8Dialect
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+  kafka:
+    consumer:
+      bootstrap-servers:
+        - "localhost:19092"
+        - "localhost:29092"
+        - "localhost:39092"
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+      #auto-offset-reset: earliest
+stripe:
+  key: sk_test_51Qo8tgC071MMxJ74sQZahJU1YaQpWdgmb4awgYxvz2QlYwczhLUrlgBm1W7kdyzcB0zaT7eJu6gWFo3EVbbiqjNs00oSz8MMx9

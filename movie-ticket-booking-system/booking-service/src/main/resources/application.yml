@@ -1,0 +1,35 @@
+server:
+  port: 8082
+spring:
+  application:
+    name: booking-service
+  datasource:
+    url: jdbc:mysql://${bokingsdb:localhost}:3306/bookings
+    username: root
+    password: ragheb01276323608
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+
+  kafka:
+    producer:
+      bootstrap-servers:
+        - "localhost:19092"
+        - "localhost:29092"
+        - "localhost:39092"
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+    consumer:
+      bootstrap-servers:
+        - "localhost:19092"
+        - "localhost:29092"
+        - "localhost:39092"
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+        #auto-offset-reset: earliest
+
+  jpa:
+    database-platform: org.hibernate.dialect.MySQL8Dialect
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+
